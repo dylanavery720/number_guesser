@@ -1,7 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  margin: auto;
 }
 
 header {
@@ -15,31 +14,51 @@ header h1 {
     font-size: 50px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    display: inline-block;
 }
 
 .number {
   font-weight: 700;
   color: #ED458B;
   padding-right: 15px;
+  display: inline-block;
+}
+
+.guess {
+    width: 165px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.clear {
+    width: 165px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.reset {
+    width: 370px;
+    border: 2px solid white;
+    border-radius: 10px;
 }
 
 
 div p {
     font-size: 80px;
     color: #EB008B;
-
 }
 
 input {
     margin: 20px;
+    width: 370px;
+    height: 25px;
 }
-
-
 
 button {
   display: inline-block;
   color: #ffffff;
   background-color: #D0D2D3;
+  margin: 0 15px 0 15px;
 }
 
 button:hover {
