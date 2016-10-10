@@ -1,0 +1,48 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: auto;
+}
+
+header {
+    background-color: #404041;
+    height: 100px;
+}
+
+header h1 {
+    color: #E6E7E8;
+    padding: 25px 25px;
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.number {
+  font-weight: 700;
+  color: #ED458B;
+  padding-right: 15px;
+}
+
+
+div p {
+    font-size: 80px;
+    color: #EB008B;
+
+}
+
+input {
+    margin: 20px;
+}
+
+
+
+button {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #D0D2D3;
+}
+
+button:hover {
+  color: #ffffff;
+  background-color: #EB008B;
+}
