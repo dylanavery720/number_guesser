@@ -5,13 +5,12 @@ body {
 
 header {
     background-color: #404041;
-    height: 100px;
+    height: auto;
 }
 
 header h1 {
     color: #E6E7E8;
-    display: inline-block;
-    font-size: 50px;
+    font-size: 2.4em;
     font-weight: 300;
     padding: 25px 25px;
 }
@@ -25,26 +24,32 @@ header h1 {
 
 .guess, .clear {
     border: 2px solid white;
-    border-radius: 10px;
-    width: 165px;
+    border-radius: 15px;
+    width: 20%;
+    height: 32px;
+}
+
+.midbox {
+  margin: 20px
 }
 
 .reset {
     border: 2px solid white;
-    border-radius: 10px;
-    width: 370px;
+    border-radius: 15px;
+    width: 45%;
+    height: 30px;
 }
-
 
 div p {
     color: #EB008B;
-    font-size: 80px;
+    font-size: 8em;
+    vertical-align: middle;
 }
 
 input {
-    height: 25px;
-    margin: 20px;
-    width: 370px;
+    height: 32px;
+    margin: 32px;
+    width: 40%;
 }
 
 button {
@@ -57,4 +62,9 @@ button {
 button:hover {
   background-color: #EB008B;
   color: #ffffff;
+}
+@media screen and (max-width: 500px) {
+  input{
+    width: 90%;
+  }
 }
