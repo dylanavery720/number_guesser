@@ -9,10 +9,10 @@ header {
 }
 
 header h1 {
-    color: #E6E7E8;
-    font-size: 2.4em;
-    font-weight: 300;
-    padding: 25px 25px;
+  color: #E6E7E8;
+  font-size: 2em;
+  font-weight: 300;
+  padding: 25px 25px;
 }
 
 .number {
@@ -26,11 +26,11 @@ header h1 {
     border: 2px solid white;
     border-radius: 15px;
     width: 20%;
-    height: 32px;
+    height: 30px;
 }
 
 .midbox {
-  margin: 20px
+  margin: 40px
 }
 
 .reset {
@@ -63,8 +63,26 @@ button:hover {
   background-color: #EB008B;
   color: #ffffff;
 }
+
 @media screen and (max-width: 500px) {
   input{
     width: 90%;
+    height: 35px;
+    margin: 25px 0 25px 0;
+  }
+
+  .guess {
+    margin-bottom: 10px;
+  }
+
+  .guess, .clear, .reset {
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    
+  }
+  .guess p, .clear p, .reset p {
+    font-size: 24px;
+    font-weight: 300;
   }
 }
