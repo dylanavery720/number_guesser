@@ -43,12 +43,8 @@ else if (userGuess < randomNum) {
   else if (isNaN(userGuess)) {
     too.innerText = 'Do not put letters in your number';
   }
-
-  // else if (userGuess < 1 || userGuess > 100) {
-  //   too.innerText = 'Please enter a number between 1-100';
-  // }
-
 }
+
 
 function checkRange() {
   var userGuess = getGuess();
@@ -59,17 +55,12 @@ function checkRange() {
 }
 
 
-
-
 function getGuess() {
   var userGuess=Number(document.getElementById('userInput').value);
   return(userGuess);
 }
 
-
-
-
-
+// Event Listeners for Buttons
 
 guess.addEventListener('click', function () {
       var userGuess = getGuess();
@@ -78,14 +69,15 @@ guess.addEventListener('click', function () {
       displayGuess();
       compareGuess();
       checkRange();
-   
-});
+   });
+
 clear.addEventListener('click', function () {
       lastGuess.innerText = "";
       too.innerText = "";
       h2.innerText = "";
       userInput.value = "";
-});
+   });
+
 reset.addEventListener('click', function() {
      mainFunction();
-});
+   });
