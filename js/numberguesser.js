@@ -1,8 +1,13 @@
 
+function randomNum() {
+  var randomNum = Math.floor(Math.random() * (max-min) + min);
+   return randomNum;
+   }
 
-var randomNumber = randomNum();
+
 var min = 1;
 var max = 100;
+var randomNumber = randomNum();
 
 var h2 = document.querySelector('h2')
 var guess = document.querySelector('.guess');
@@ -15,16 +20,12 @@ var maximum = document.querySelector('#maximum');
 var minClick = document.querySelector('#minClick');
 var maxClick = document.querySelector('#maxClick');
 
-function randomNum(min,max) {
-  var randomNum = Math.floor(Math.random() * 100 + 1);
-   return randomNum;
-   }
 
 
 function mainFunction() {
-   min = getMin();
-   max = getMax();
-  randomNumber = randomNum(min,max);
+  min = getMin();
+  max = getMax();
+  randomNumber = randomNum(min, max);
   return(randomNumber);
     }
 
@@ -86,12 +87,22 @@ function getGuess() {
 
 function getMin() {
     var userMin=Number(document.getElementById('minimum').value);
-    return (userMin);
+    min = userMin;
+    return (min);
 }
 
 function getMax() {
     var userMax=Number(document.getElementById('maximum').value);
-    return (userMax);
+    max = userMax+1;
+    return (max);
+}
+
+function enableReset() {
+    var resetbtn = document.getElementById("resetbtn"); resetbtn.disabled = false;
+}
+
+function enableClear() {
+    var clearbtn = document.getElementById("clearbtn"); clearbtn.disabled = false;
 }
 
 // Event Listeners for Buttons
@@ -105,7 +116,6 @@ maxClick.addEventListener('click', function () {
   });
 
 guess.addEventListener('click', function () {
-  // debugger
       var userGuess = getGuess();
       // displayGuess();
       // document.getElementById(".reset").disabled = false;
@@ -113,6 +123,8 @@ guess.addEventListener('click', function () {
       displayGuess();
       compareGuess();
       checkRange();
+      enableReset();
+      enableClear();
    });
 
 clear.addEventListener('click', function () {
