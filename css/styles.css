@@ -30,7 +30,8 @@ header h1 {
 }
 
 .midbox {
-  margin: 40px
+  margin: 40px;
+
 }
 
 .reset {
@@ -79,7 +80,7 @@ button:hover {
     width: 90%;
     height: 40px;
     border-radius: 20px;
-    
+
   }
   .guess p, .clear p, .reset p {
     font-size: 24px;

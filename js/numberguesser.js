@@ -12,7 +12,7 @@ var guess = document.querySelector('.guess');
 var clear = document.querySelector('.clear');
 var userInput = document.querySelector('#userInput');
 var reset = document.querySelector('.reset');
-var lastGuess = document.querySelector('.lastGuess');
+var lastGuess = document.querySelector('#lastGuess');
 var too = document.querySelector('#too');
 
 function mainFunction() {
@@ -28,7 +28,7 @@ function compareGuess() {
   var userGuess = getGuess();
   var randomNum = randomNumber;
   if (userGuess === randomNum) {
-     too.innerText = 'Well now look at you!';
+     too.innerText = ':-D';
 }
 
 else if (userGuess > max) {
@@ -43,12 +43,8 @@ else if (userGuess < randomNum) {
   else if (isNaN(userGuess)) {
     too.innerText = 'Do not put letters in your number';
   }
-
-  // else if (userGuess < 1 || userGuess > 100) {
-  //   too.innerText = 'Please enter a number between 1-100';
-  // }
-
 }
+
 
 function checkRange() {
   var userGuess = getGuess();
@@ -59,19 +55,12 @@ function checkRange() {
 }
 
 
-
-
 function getGuess() {
   var userGuess=Number(document.getElementById('userInput').value);
   return(userGuess);
 }
 
-
-
-
-
-
-// ? ^^ This might be how to generate a random number when the page loads ?
+// Event Listeners for Buttons
 
 guess.addEventListener('click', function () {
       var userGuess = getGuess();
@@ -80,14 +69,15 @@ guess.addEventListener('click', function () {
       displayGuess();
       compareGuess();
       checkRange();
-   // put this into a display function? ^
-});
+   });
+
 clear.addEventListener('click', function () {
       lastGuess.innerText = "";
       too.innerText = "";
       h2.innerText = "";
       userInput.value = "";
-});
+   });
+
 reset.addEventListener('click', function() {
      mainFunction();
-});
+   });
