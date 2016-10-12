@@ -96,13 +96,13 @@ function getMax() {
 
 // Event Listeners for Buttons
 
-minClick.addEventListener('click', function () {
-      getMin();
-  });
-
-maxClick.addEventListener('click', function () {
-      getMax();
-  });
+// minClick.addEventListener('click', function () {
+//       getMin();
+//   });
+//
+// maxClick.addEventListener('click', function () {
+//       getMax();
+//   });
 
 guess.addEventListener('click', function () {
   // debugger
