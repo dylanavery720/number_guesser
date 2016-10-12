@@ -4,60 +4,59 @@ body {
 }
 
 header {
-    background-color: #404041;
-    height: auto;
+  background-color: #404041;
 }
 
 header h1 {
   color: #E6E7E8;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: 300;
-  padding: 25px 25px;
+  padding: 1em 1em;
+}
+
+.clear, .guess {
+    width: 20%;
+}
+
+.guess {
+  margin-right: 5%;
+}
+
+.midbox {
+  margin: 2em;
 }
 
 .number {
   color: #ED458B;
-  display: inline-block;
   font-weight: 700;
-  padding-right: 15px;
+  padding-right: .25em;
 }
 
-.guess, .clear {
-    border: 2px solid white;
-    border-radius: 15px;
-    width: 20%;
-    height: 30px;
-}
-
-.midbox {
-  margin: 40px;
-
-}
-
-.reset {
-    border: 2px solid white;
-    border-radius: 15px;
+.reset, #minClick, #maxClick {
     width: 45%;
-    height: 30px;
 }
 
-div p {
+#lastGuess {
     color: #EB008B;
     font-size: 8em;
-    vertical-align: middle;
+    margin: .1em;
 }
 
 input {
-    height: 32px;
-    margin: 32px;
-    width: 40%;
+    height: 3em;
+    width: 45%;
+    margin: 2.5em auto;
+    display: block;
+    text-align: center;
 }
 
 button {
   background-color: #D0D2D3;
   color: #ffffff;
-  display: inline-block;
-  margin: 0 15px 0 15px;
+  font-family: 'Open Sans', sans-serif;
+  height: 4em;
+  border: .2em solid white;
+  border-radius: 2em;
 }
 
 button:hover {
@@ -68,22 +67,23 @@ button:hover {
 @media screen and (max-width: 500px) {
   input{
     width: 90%;
-    height: 35px;
-    margin: 25px 0 25px 0;
+    height: 4em;
+    margin: 5% auto;
   }
 
   .guess {
-    margin-bottom: 10px;
+    margin-bottom: 1em;
+    margin-right: 0;
   }
 
-  .guess, .clear, .reset {
+  .guess, .clear, .reset, #minClick, #maxClick {
     width: 90%;
-    height: 40px;
-    border-radius: 20px;
+    height: 4em;
+    border-radius: 2em;
 
   }
-  .guess p, .clear p, .reset p {
-    font-size: 24px;
+  .guess p, .clear p, .reset p, #minClick p, #maxClick p {
+    font-size: 2em;
     font-weight: 300;
   }
 }
