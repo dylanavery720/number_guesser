@@ -1,7 +1,4 @@
-function randomNum() {
-  var randomNum = Math.floor(Math.random() * 100 + 1);
-   return randomNum;
-   }
+
 
 var randomNumber = randomNum();
 var min = 1;
@@ -13,33 +10,44 @@ var clear = document.querySelector('.clear');
 var userInput = document.querySelector('#userInput');
 var reset = document.querySelector('.reset');
 var lastGuess = document.querySelector('#lastGuess');
-var too = document.querySelector('#too');
+var minimum = document.querySelector('#minimum');
+var maximum = document.querySelector('#maximum');
+var minClick = document.querySelector('#minClick');
+var maxClick = document.querySelector('#maxClick');
+
+function randomNum(min,max) {
+  var randomNum = Math.floor(Math.random() * 100 + 1);
+   return randomNum;
+   }
+
 
 function mainFunction() {
-  randomNumber = randomNum();
+   min = getMin();
+   max = getMax();
+  randomNumber = randomNum(min,max);
   return(randomNumber);
-}
+    }
 
 function displayGuess() {
   h2.innerText = "Your last guess was";
-}
+    }
 
 function compareGuess() {
   var userGuess = getGuess();
   var randomNum = randomNumber;
   if (userGuess === randomNum) {
      too.innerText = ':-D';
-}
+   }
 
-else if (userGuess > max) {
+  else if (userGuess > max) {
   too.innerText = 'Please enter a number between 1-100';
-}
-else if (userGuess < randomNum) {
+  }
+  else if (userGuess < randomNum) {
     too.innerText = 'That is too low.';
-}
-  if (userGuess > randomNum) {
+  }
+  else if (userGuess > randomNum) {
     too.innerText = 'That is too high.';
-}
+  }
   else if (isNaN(userGuess)) {
     too.innerText = 'Do not put letters in your number';
   }
@@ -60,11 +68,47 @@ function getGuess() {
   return(userGuess);
 }
 
+
+// Buttonn Disablers
+
+// function disableReset() {
+//   document.getElementById(".reset").disabled = true;
+//    }
+
+// function disableClear() {
+//   if (userInput === false) {
+//   document.getElementById("reset").disabled = true;
+// }
+//   else {
+//     document.getElementById("myBtn").disabled = false;
+//   }
+// }
+
+function getMin() {
+    var userMin=Number(document.getElementById('minimum').value);
+    return (userMin);
+}
+
+function getMax() {
+    var userMax=Number(document.getElementById('maximum').value);
+    return (userMax);
+}
+
 // Event Listeners for Buttons
 
+minClick.addEventListener('click', function () {
+      getMin();
+  });
+
+maxClick.addEventListener('click', function () {
+      getMax();
+  });
+
 guess.addEventListener('click', function () {
+  // debugger
       var userGuess = getGuess();
       // displayGuess();
+      // document.getElementById(".reset").disabled = false;
       lastGuess.innerText = userGuess;
       displayGuess();
       compareGuess();
