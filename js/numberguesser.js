@@ -33,6 +33,13 @@ function mainFunction() {
   return(randomNumber);
 }
 
+function resetFunction() {
+  min = 1;
+  max = 100;
+  randomNumber = randomNum(min, max);
+  return(randomNumber);
+}
+
 function displayGuess() {
   h2.innerText = "Your last guess was";
 }
@@ -50,6 +57,16 @@ function getGuess() {
   return(userGuess);
 }
 
+function clearbutton() { clear.addEventListener('click', function () {
+  debugger
+      lastGuess.innerText = "";
+      too.innerText = "";
+      h2.innerText = "";
+      userInput.value = "";
+      minimum.value = "";
+      maximum.value = "";
+   });
+ }
 
 // Main If/Else Function, can probably be cleanedup a bit & refactored.
 
@@ -58,10 +75,11 @@ function compareGuess() {
   var randomNum = randomNumber;
   if (userGuess === randomNum) {
      too.innerText = ':-D';
+    //  userMax = userMax + 10;
 }
 
   else if (userGuess > max) {
-  too.innerText = 'Please enter a number between 1-100';
+  too.innerText = 'Please enter a number between the minimum and maximum.';
 }
   else if (userGuess < randomNum) {
     too.innerText = 'That is too low.';
@@ -134,8 +152,12 @@ clear.addEventListener('click', function () {
       too.innerText = "";
       h2.innerText = "";
       userInput.value = "";
+      minimum.value = "";
+      maximum.value = "";
    });
 
 reset.addEventListener('click', function() {
-     mainFunction();
+     minimum.value = "";
+     maximum.value = "";
+     resetFunction();
    });
