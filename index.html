@@ -16,15 +16,14 @@
 
     <section class="input-wrapper">
         <input type="number" name="minimum" placeholder="Enter the Minimum" id="minimum">
-          <button type="button" name="button" id="minClick"><p>Set Minimum</p></button>
         <input type="number" name="maximum" placeholder="Enter the Maximum" id="maximum">
-          <button type="button" name="button" id="maxClick"><p>Set Maximum</p></button>
+          <button type="button" name="button" id="maxClick"><p>Set Range</p></button>
         <input type="number" name="range" min="min" max="max" placeholder="Enter Your Guess" id="userInput">
     </section>
 
     <section>
         <button type="button" name="button" class="guess"><p>Guess</p></button>
-        <button type="button" name="button" class="clear"><p>Clear</p></button>
+        <button type="button" name="button" id="clearbtn" class="clear" disabled><p>Clear</p></button>
     </section>
 
     <section class="midbox">
@@ -36,10 +35,10 @@
     </section>
 
     <section>
-      <button type="button" name="button" class="reset"><p>Reset</p></button>
+      <button type="button" name="button" id="resetbtn" class="reset" disabled><p>Reset</p></button>
     </section>
 
   </body>
   <script type="text/javascript" src="js/numberguesser.js"></script>
 </html>
-<!-- second sick edit from buss -->
+

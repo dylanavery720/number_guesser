@@ -15,7 +15,7 @@ header h1 {
 }
 
 .clear, .guess {
-    width: 20%;
+  width: 20%;
 }
 
 .guess {
@@ -42,6 +42,22 @@ header h1 {
     margin: .1em;
 }
 
+button {
+  background-color: #D0D2D3;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 3em;
+  border: .01em solid white;
+  border-radius: 2em;
+}
+
+button:hover {
+  background-color: #EB008B;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 input {
     height: 3em;
     width: 45%;
@@ -50,18 +66,8 @@ input {
     text-align: center;
 }
 
-button {
-  background-color: #D0D2D3;
-  color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
-  height: 4em;
-  border: .2em solid white;
-  border-radius: 2em;
-}
-
-button:hover {
-  background-color: #EB008B;
-  color: #ffffff;
+input:hover {
+  cursor: text;
 }
 
 @media screen and (max-width: 500px) {

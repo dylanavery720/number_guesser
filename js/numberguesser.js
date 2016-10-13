@@ -1,13 +1,17 @@
+// Random Number Generator
 
 function randomNum() {
   var randomNum = Math.floor(Math.random() * (max-min) + min);
    return randomNum;
-   }
+}
 
+// Global Variables
 
 var min = 1;
 var max = 100;
 var randomNumber = randomNum();
+
+// Query Selectors! The foundation.
 
 var h2 = document.querySelector('h2')
 var guess = document.querySelector('.guess');
@@ -20,40 +24,18 @@ var maximum = document.querySelector('#maximum');
 var minClick = document.querySelector('#minClick');
 var maxClick = document.querySelector('#maxClick');
 
-
+// All the functions.
 
 function mainFunction() {
   min = getMin();
   max = getMax();
   randomNumber = randomNum(min, max);
   return(randomNumber);
-    }
+}
 
 function displayGuess() {
   h2.innerText = "Your last guess was";
-    }
-
-function compareGuess() {
-  var userGuess = getGuess();
-  var randomNum = randomNumber;
-  if (userGuess === randomNum) {
-     too.innerText = ':-D';
-   }
-
-  else if (userGuess > max) {
-  too.innerText = 'Please enter a number between 1-100';
-  }
-  else if (userGuess < randomNum) {
-    too.innerText = 'That is too low.';
-  }
-  else if (userGuess > randomNum) {
-    too.innerText = 'That is too high.';
-  }
-  else if (isNaN(userGuess)) {
-    too.innerText = 'Do not put letters in your number';
-  }
 }
-
 
 function checkRange() {
   var userGuess = getGuess();
@@ -63,39 +45,61 @@ function checkRange() {
   }
 }
 
-
 function getGuess() {
   var userGuess=Number(document.getElementById('userInput').value);
   return(userGuess);
 }
 
 
-// Buttonn Disablers
+// Main If/Else Function, can probably be cleanedup a bit & refactored.
 
-// function disableReset() {
-//   document.getElementById(".reset").disabled = true;
-//    }
+function compareGuess() {
+  var userGuess = getGuess();
+  var randomNum = randomNumber;
+  if (userGuess === randomNum) {
+     too.innerText = ':-D';
+}
 
-// function disableClear() {
-//   if (userInput === false) {
-//   document.getElementById("reset").disabled = true;
-// }
-//   else {
-//     document.getElementById("myBtn").disabled = false;
-//   }
-// }
+  else if (userGuess > max) {
+  too.innerText = 'Please enter a number between 1-100';
+}
+  else if (userGuess < randomNum) {
+    too.innerText = 'That is too low.';
+}
+  else if (userGuess > randomNum) {
+    too.innerText = 'That is too high.';
+}
+  else if (isNaN(userGuess)) {
+    too.innerText = 'Do not put letters in your number';
+  }
+}
+
+
+// Phase 3 Functions
 
 function getMin() {
     var userMin=Number(document.getElementById('minimum').value);
-    min = userMin;
+    if (userMin > 0) {
+      min = userMin;
+    }
+    else {
+      min = 1;
+    }
     return (min);
 }
 
 function getMax() {
     var userMax=Number(document.getElementById('maximum').value);
-    max = userMax+1;
+    if (userMax > 0) {
+      max = userMax+1;
+    }
+    else {
+      max = 100;
+    }
     return (max);
 }
+
+// Button Enablers
 
 function enableReset() {
     var resetbtn = document.getElementById("resetbtn"); resetbtn.disabled = false;
@@ -105,20 +109,18 @@ function enableClear() {
     var clearbtn = document.getElementById("clearbtn"); clearbtn.disabled = false;
 }
 
+
+
 // Event Listeners for Buttons
 
-minClick.addEventListener('click', function () {
-      getMin();
-  });
-
 maxClick.addEventListener('click', function () {
+      getMin();
       getMax();
+      mainFunction();
   });
 
 guess.addEventListener('click', function () {
       var userGuess = getGuess();
-      // displayGuess();
-      // document.getElementById(".reset").disabled = false;
       lastGuess.innerText = userGuess;
       displayGuess();
       compareGuess();
