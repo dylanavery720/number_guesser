@@ -24,6 +24,8 @@ header h1 {
 
 .midbox {
   margin: 2em;
+  height: 8em;
+  padding: 1em 1em;
 }
 
 .number {
